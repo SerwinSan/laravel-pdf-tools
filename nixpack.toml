@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["...", "php81Extensions.gd", "php81Extensions.pdo", "php81Extensions.pgsql"]
+
+[phases.build]
+cmds = ["composer install --ignore-platform-reqs", "npm install", "npm run build", "php artisan migrate --force"]
