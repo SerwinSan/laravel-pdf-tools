@@ -1,0 +1,166 @@
+/* --- GLOBAL STYLE (Desktop First) --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 2rem auto; /* Jarak atas bawah besar di desktop */
+    padding: 0 1rem;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e4e8;
+    padding: 2rem; /* Padding lega di desktop */
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Input File dipercantik */
+input[type=file] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #cbd5e0;
+    border-radius: 6px;
+    background: #f8fafc;
+    cursor: pointer;
+    box-sizing: border-box; /* Agar padding tidak menambah lebar */
+}
+
+input[type=file]:hover {
+    border-color: #a0aec0;
+}
+
+button {
+    background: #3490dc;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.2s;
+    touch-action: manipulation; /* Optimasi sentuhan di HP */
+}
+
+button:hover {
+    background: #2779bd;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background: #ccc !important; /* Warna abu jika disabled */
+}
+
+/* Tabel History */
+.table-wrapper {
+    overflow-x: auto; /* Agar tabel bisa digeser samping di HP */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 500px; /* Lebar minimal agar tabel tidak gepeng */
+}
+
+th, td {
+    border-bottom: 1px solid #e1e4e8;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f5f8;
+    color: #606f7b;
+    font-weight: 600;
+}
+
+/* Preview Splitter */
+#preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.page-thumbnail {
+    cursor: pointer;
+    border: 3px solid #ddd;
+    transition: all 0.2s;
+    border-radius: 4px;
+    max-width: 100%; /* Agar tidak melebar keluar layar */
+    height: auto;
+}
+
+.page-thumbnail.selected {
+    border-color: #3490dc;
+    box-shadow: 0 0 10px rgba(52, 144, 220, 0.5);
+    transform: scale(0.95); /* Efek pencet */
+}
+
+.page-number {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+/* --- MOBILE RESPONSIVE (MEDIA QUERIES) --- */
+@media (max-width: 600px) {
+    body {
+        margin: 1rem auto; /* Kurangi margin luar */
+        padding: 0 0.5rem; /* Kurangi padding samping */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Perkecil judul */
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        padding: 1.2rem; /* Kurangi padding dalam card */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Agar tombol lebih mudah dipencet jempol */
+    button {
+        padding: 16px; 
+        font-size: 1.1rem;
+    }
+
+    /* Thumbnail splitter di HP */
+    .page-thumbnail {
+        width: 100px !important; /* Paksa ukuran thumbnail di HP */
+        height: auto !important;
+    }
+}
